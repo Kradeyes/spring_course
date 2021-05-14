@@ -1,14 +1,24 @@
 package org.example.spring_introduction;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
+    /*
+    @Autowired
+     */
     private Pet pet;
     private String surname;
     private int age;
 
-    /* public Person(Pet pet) {
+    /*
+     @Autowired
+     public Person(Pet pet) {
         this.pet = pet;
     }
-    */
+     */
+
 
     public String getSurname() {
         return surname;
@@ -25,7 +35,9 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-
+    /*
+    @Autowired
+     */
     public void setPet(Pet pet) {
         this.pet = pet;
     }

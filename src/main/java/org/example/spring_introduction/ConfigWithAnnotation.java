@@ -7,11 +7,13 @@ public class ConfigWithAnnotation {
     ClassPathXmlApplicationContext context =
             new ClassPathXmlApplicationContext("applicationContext1.xml");
 
-    Cat myCat =context.getBean("catBean", Cat.class);
+    Person person = context.getBean("personBean", Person.class);
+    person.callYourPet();
     /*
+    Cat myCat =context.getBean("catBean", Cat.class);
     Если мы не задаем id бину в аннотации Component, то
     Cat myCat =context.getBean("cat", Cat.class);
-     */
     myCat.say();
+     */
    }
 }
