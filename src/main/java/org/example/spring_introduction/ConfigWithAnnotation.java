@@ -9,6 +9,7 @@ public class ConfigWithAnnotation {
 
     Person person = context.getBean("personBean", Person.class);
     person.callYourPet();
+        System.out.println(person.getSurname());
     /*
     Cat myCat =context.getBean("catBean", Cat.class);
     Если мы не задаем id бину в аннотации Component, то
