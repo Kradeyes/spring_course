@@ -3,9 +3,11 @@ package org.example.spring_introduction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("org.example.spring_introduction")
+@PropertySource("classpath:myApp.properties")
+//@ComponentScan("org.example.spring_introduction")
 public class MyConfig {
 
     @Bean

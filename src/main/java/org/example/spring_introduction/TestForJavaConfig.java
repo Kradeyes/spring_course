@@ -7,5 +7,7 @@ public class TestForJavaConfig {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         Person person =  context.getBean("myPersonBean", Person.class);
         person.callYourPet();
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
     }
 }
