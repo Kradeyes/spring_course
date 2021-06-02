@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component("dogBean")
+//@Component("dogBean")
 public class Dog implements Pet {
 
     @Override
