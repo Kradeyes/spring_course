@@ -2,28 +2,21 @@ package aop.aspects;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
-    /*
-    @Pointcut("execution(* get*())")
-    private void allGetMethods(){}
+@Order(1)
+public class LoggingAspect {
 
-    @Before("allGetMethods()")
+    @Before("aop.aspects.MyPointcuts.allGetMethods()")
     public void beforeGetBookAdvice() {
         System.out.println("Try to get book");
     }
 
-    @Before("allGetMethods()")
-    public void beforeGetSecurityAdvice() {
-        System.out.println("Security check");
-    }
-     */
 
-    @Pointcut("execution(* aop.UniLibrary.get*())")
+   /* @Pointcut("execution(* aop.UniLibrary.get*())")
     private void allGetMethodsFromUniLibrary(){
     }
 
@@ -50,5 +43,6 @@ public class LoggingAndSecurityAspect {
         public void beforeGetAndReturnLoggingAdvice() {
             System.out.println("writing log 3");
         }
+    */
     }
 
