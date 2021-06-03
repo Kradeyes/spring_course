@@ -13,8 +13,10 @@ public class UniLibrary extends AbstractLibrary {
         System.out.println("We took the magazine from UniLibrary");
     }
 
-    public void returnBook() {
+    public String returnBook() {
+        int  a = 10/0;
         System.out.println("We returned the book from UniLibrary");
+        return "War and peace";
     }
 
     public void returnMagazine() {
