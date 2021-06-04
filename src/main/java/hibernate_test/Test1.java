@@ -16,6 +16,13 @@ public class Test1 {
             session.beginTransaction();
             session.save(emp);
             session.getTransaction().commit();
+
+        int myId = emp.getId();
+        session = factory.getCurrentSession();
+        session.beginTransaction();
+        Employee employee = session.get(Employee.class, myId);
+        session.getTransaction().commit();
+        System.out.println(employee);
         }
     }
 
