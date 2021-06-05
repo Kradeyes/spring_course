@@ -15,18 +15,34 @@ public class Test1 {
                 .addAnnotatedClass(Department.class)
                 .buildSessionFactory();
         Session session = factory.getCurrentSession();
-        Department dep = new Department("IT", 300, 1200);
-        Employee emp1 = new Employee("Roma", "Yanin", 800);
-        Employee emp2 = new Employee("Elena", "Smirnova", 1000);
+        Department dep = new Department("Sales", 800, 1500);
+        Employee emp1 = new Employee("Ivan", "Ivanov", 800);
+        Employee emp2 = new Employee("Maria", "Egorova", 1500);
+        Employee emp3 = new Employee("Anton", "Sidorov", 1200);
         dep.addEmployeeToDepartment(emp1);
         dep.addEmployeeToDepartment(emp2);
+        dep.addEmployeeToDepartment(emp3);
         session.beginTransaction();
+
+        System.out.println("Get department");
+        Department department = session.get(Department.class, 3);
+
+        System.out.println("Show department");
+        System.out.println(department);
+
+        System.out.println("Show employees of the department");
+        System.out.println(department.getEmps());
+
         /*
         session.save(dep);
         Insert
          */
-        Employee employee = session.get(Employee.class, 2);
+
+        /*
+        Department employee = session.get(Department.class, 3);
         session.delete(employee);
+        Delete
+         */
         session.getTransaction().commit();
         factory.close();
     }
